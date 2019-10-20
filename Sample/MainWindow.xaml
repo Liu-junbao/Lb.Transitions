@@ -17,9 +17,9 @@
     </Window.Resources>
     <Grid>
         <Transitioner x:Name="tran" ItemsSource="{Binding Source={StaticResource data.Images}}">
-            <Transitioner.WipeSchemes>
-                <RandomWipes />
-            </Transitioner.WipeSchemes>
+            <Transitioner.WipeStrategy>
+                <RandomStrategy/>
+            </Transitioner.WipeStrategy>
             <Transitioner.ItemTemplate>
                 <DataTemplate>
                     <Image

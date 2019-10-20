@@ -4,7 +4,7 @@
     <TargetFramework>netcoreapp3.0</TargetFramework>
     <UseWPF>true</UseWPF>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
-    <Description>wpf transitions</Description>
+    <Description>wpf 内容切换动画效果</Description>
   </PropertyGroup>
 
   <ItemGroup>

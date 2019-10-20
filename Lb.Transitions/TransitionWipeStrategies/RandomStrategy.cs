@@ -6,7 +6,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Markup;
 
-namespace Lb.Transitions.TransitionWipeSubjects
+namespace Lb.Transitions.TransitionWipeStrategies
 {
     [ContentProperty(nameof(Wipes))]
     public class RandomStrategy : ITransitionWipeStrategy
