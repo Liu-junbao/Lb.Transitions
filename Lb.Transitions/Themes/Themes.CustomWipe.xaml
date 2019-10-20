@@ -1,0 +1,340 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:local="clr-namespace:Lb.Transitions"
+                    xmlns:wipe="clr-namespace:Lb.Transitions.TransitionWipes">
+    <Storyboard x:Key="Checkerboard.To">
+        <RectAnimation Storyboard.TargetProperty="OpacityMask.Drawing.Geometry.Children[0].Rect" To="0,0,2,1" Duration="0:0:0.8" BeginTime="0:0:0" />
+        <RectAnimation Storyboard.TargetProperty="OpacityMask.Drawing.Geometry.Children[1].Rect" To="0,1,1,1" Duration="0:0:0.4" BeginTime="0:0:0.4" />
+        <RectAnimation Storyboard.TargetProperty="OpacityMask.Drawing.Geometry.Children[2].Rect" To="1,1,1,1" Duration="0:0:0.4" BeginTime="0:0:0" />
+    </Storyboard>
+    <Storyboard x:Key="DiagonalWipe.To">
+        <DoubleAnimation Storyboard.TargetProperty="OpacityMask.GradientStops[1].Offset" From="0" To="1" Duration="0:0:0.4" />
+        <DoubleAnimation Storyboard.TargetProperty="OpacityMask.GradientStops[0].Offset" From="0" To="1" Duration="0:0:0.4" BeginTime="0:0:0.05" />
+    </Storyboard>
+    <Storyboard x:Key="Diamonds.To">
+        <DoubleAnimation Storyboard.TargetProperty="OpacityMask.Drawing.Geometry.Transform.Angle" To="0" />
+    </Storyboard>
+    <Storyboard x:Key="Dots.To">
+        <RectAnimation Storyboard.TargetProperty="OpacityMask.Viewbox" From="-1,-1,3,3" To="0.49,0.49,0.02,0.02" />
+    </Storyboard>
+    <Storyboard x:Key="DoubleRotateWipeT.To">
+        <DoubleAnimation Storyboard.TargetProperty="OpacityMask.Drawing.Children[0].Brush.Transform.Angle" To="-45" Duration="0:0:0.5" />
+        <DoubleAnimation Storyboard.TargetProperty="OpacityMask.Drawing.Children[1].Brush.Transform.Angle" To="-45" Duration="0:0:0.5" />
+    </Storyboard>
+    <Storyboard x:Key="FadeAndBlur.From">
+        <DoubleAnimation Storyboard.TargetProperty="BitmapEffect.Radius" From="0" To="5" Duration="0:0:1" />
+        <DoubleAnimation Storyboard.TargetProperty="Opacity" From="1" To="0" Duration="0:0:1" />
+    </Storyboard>
+    <Storyboard x:Key="FadeAndBlur.To">
+        <DoubleAnimation Storyboard.TargetProperty="Opacity" From="0" To="1" Duration="0:0:0.5" />
+        <DoubleAnimation Storyboard.TargetProperty="RenderTransform.ScaleX" From="0.8" To="1" Duration="0:0:0.5" />
+        <DoubleAnimation Storyboard.TargetProperty="RenderTransform.ScaleY" From="0.8" To="1" Duration="0:0:0.5" />
+    </Storyboard>
+    <Storyboard x:Key="FadeAndGrow.From">
+        <DoubleAnimation Storyboard.TargetProperty="Opacity" From="1" To="0" Duration="0:0:0.5" />
+        <DoubleAnimation Storyboard.TargetProperty="RenderTransform.ScaleX" From="1" To="1.2" Duration="0:0:0.5" />
+        <DoubleAnimation Storyboard.TargetProperty="RenderTransform.ScaleY" From="1" To="1.2" Duration="0:0:0.5" />
+    </Storyboard>
+    <Storyboard x:Key="FadeAndGrow.To">
+        <DoubleAnimation Storyboard.TargetProperty="Opacity" From="0" To="1" Duration="0:0:0.5" />
+        <DoubleAnimation Storyboard.TargetProperty="RenderTransform.ScaleX" From="0.8" To="1" Duration="0:0:0.5" />
+        <DoubleAnimation Storyboard.TargetProperty="RenderTransform.ScaleY" From="0.8" To="1" Duration="0:0:0.5" />
+    </Storyboard>
+    <Storyboard x:Key="HorizontalBlinds.To">
+        <DoubleAnimation Storyboard.TargetProperty="OpacityMask.GradientStops[0].Offset" To="1" Duration="0:0:0.5" BeginTime="0:0:0.2" />
+        <DoubleAnimation Storyboard.TargetProperty="OpacityMask.GradientStops[1].Offset" To="1" Duration="0:0:0.5" />
+    </Storyboard>
+    <Storyboard x:Key="HorizontalWipe.To">
+        <DoubleAnimation Storyboard.TargetProperty="OpacityMask.GradientStops[1].Offset" From="0" To="1" Duration="0:0:0.4" />
+        <DoubleAnimation Storyboard.TargetProperty="OpacityMask.GradientStops[0].Offset" From="0" To="1" Duration="0:0:0.4" BeginTime="0:0:0.05" />
+    </Storyboard>
+    <Storyboard x:Key="Melt.To">
+        <ColorAnimation Storyboard.TargetProperty="OpacityMask.GradientStops[0].Color" To="White" Duration="0:0:0.2" BeginTime="0:0:0.14" />
+        <ColorAnimation Storyboard.TargetProperty="OpacityMask.GradientStops[1].Color" To="White" Duration="0:0:0.3" BeginTime="0:0:0.2" />
+        <ColorAnimation Storyboard.TargetProperty="OpacityMask.GradientStops[2].Color" To="White" Duration="0:0:0.5" BeginTime="0:0:0.031" />
+        <ColorAnimation Storyboard.TargetProperty="OpacityMask.GradientStops[3].Color" To="White" Duration="0:0:0.3" BeginTime="0:0:0.02" />
+        <ColorAnimation Storyboard.TargetProperty="OpacityMask.GradientStops[4].Color" To="White" Duration="0:0:0.45" BeginTime="0:0:0.3" />
+        <ColorAnimation Storyboard.TargetProperty="OpacityMask.GradientStops[5].Color" To="White" Duration="0:0:0.25" BeginTime="0:0:0.12" />
+        <ColorAnimation Storyboard.TargetProperty="OpacityMask.GradientStops[6].Color" To="White" Duration="0:0:0.3" BeginTime="0:0:0.19" />
+        <ColorAnimation Storyboard.TargetProperty="OpacityMask.GradientStops[7].Color" To="White" Duration="0:0:0.4" BeginTime="0:0:0" />
+        <ColorAnimation Storyboard.TargetProperty="OpacityMask.GradientStops[8].Color" To="White" Duration="0:0:0.13" BeginTime="0:0:0.081" />
+        <ColorAnimation Storyboard.TargetProperty="OpacityMask.GradientStops[9].Color" To="White" Duration="0:0:0.34" BeginTime="0:0:0.331" />
+        <ColorAnimation Storyboard.TargetProperty="OpacityMask.GradientStops[10].Color" To="White" Duration="0:0:0.42" BeginTime="0:0:.0121" />
+    </Storyboard>
+    <Storyboard x:Key="Roll.From">
+        <DoubleAnimation Storyboard.TargetProperty="RenderTransform.Angle" From="0" To="-90" />
+    </Storyboard>
+    <Storyboard x:Key="RotateWipe.To">
+        <DoubleAnimation Storyboard.TargetProperty="OpacityMask.Transform.Angle" To="-90" />
+    </Storyboard>
+    <Storyboard x:Key="Star.To">
+        <DoubleAnimation Storyboard.TargetProperty="OpacityMask.RelativeTransform.Children[0].ScaleX" From="0" To="4" Duration="0:0:0.7" />
+        <DoubleAnimation Storyboard.TargetProperty="OpacityMask.RelativeTransform.Children[0].ScaleY" From="0" To="4" Duration="0:0:0.7" />
+    </Storyboard>
+    <Storyboard x:Key="VerticalBlinds.To">
+        <DoubleAnimation Storyboard.TargetProperty="OpacityMask.GradientStops[0].Offset" To="1" Duration="0:0:0.5" BeginTime="0:0:0.2" />
+        <DoubleAnimation Storyboard.TargetProperty="OpacityMask.GradientStops[1].Offset" To="1" Duration="0:0:0.5" />
+    </Storyboard>
+    <Storyboard x:Key="VerticalWipe.To">
+        <DoubleAnimation Storyboard.TargetProperty="OpacityMask.GradientStops[1].Offset" From="0" To="1" Duration="0:0:0.4" />
+        <DoubleAnimation Storyboard.TargetProperty="OpacityMask.GradientStops[0].Offset" From="0" To="1" Duration="0:0:0.4" BeginTime="0:0:0.05" />
+    </Storyboard>
+
+
+
+    <Style x:Key="st.Checkerboard.To" TargetType="{x:Type local:TransitionerSlide}">
+        <Setter Property="UIElement.OpacityMask">
+            <Setter.Value>
+                <DrawingBrush TileMode="Tile" ViewboxUnits="Absolute" Viewbox="0,0,2,2" Viewport="0,0,60,60" ViewportUnits="Absolute">
+                    <DrawingBrush.Drawing>
+                        <GeometryDrawing Brush="#FFFFFFFF">
+                            <GeometryDrawing.Geometry>
+                                <GeometryGroup>
+                                    <RectangleGeometry Rect="0,0,0,1" />
+                                    <RectangleGeometry Rect="0,1,0,1" />
+                                    <RectangleGeometry Rect="1,1,0,1" />
+                                </GeometryGroup>
+                            </GeometryDrawing.Geometry>
+                        </GeometryDrawing>
+                    </DrawingBrush.Drawing>
+                </DrawingBrush>
+            </Setter.Value>
+        </Setter>
+    </Style>
+    <Style x:Key="st.DiagonalWipe.To" TargetType="{x:Type local:TransitionerSlide}">
+        <Setter Property="UIElement.OpacityMask">
+            <Setter.Value>
+                <LinearGradientBrush StartPoint="0,0" EndPoint="1,1">
+                    <GradientStop Color="#FF000000" Offset="0" />
+                    <GradientStop Color="#00000000" Offset="0" />
+                </LinearGradientBrush>
+            </Setter.Value>
+        </Setter>
+    </Style>
+    <Style x:Key="st.Diamonds.To" TargetType="{x:Type local:TransitionerSlide}">
+        <Setter Property="UIElement.OpacityMask">
+            <Setter.Value>
+                <DrawingBrush TileMode="FlipXY" ViewboxUnits="Absolute" Viewport="0,0,30,30" ViewportUnits="Absolute">
+                    <DrawingBrush.Drawing>
+                        <GeometryDrawing Brush="#FFFFFFFF">
+                            <GeometryDrawing.Geometry>
+                                <RectangleGeometry Rect="-1,-1,2,2">
+                                    <RectangleGeometry.Transform>
+                                        <RotateTransform Angle="90" CenterX="1" CenterY="1" />
+                                    </RectangleGeometry.Transform>
+                                </RectangleGeometry>
+                            </GeometryDrawing.Geometry>
+                        </GeometryDrawing>
+                    </DrawingBrush.Drawing>
+                </DrawingBrush>
+            </Setter.Value>
+        </Setter>
+    </Style>
+    <Style x:Key="st.Dots.To" TargetType="{x:Type local:TransitionerSlide}">
+        <Setter Property="UIElement.OpacityMask">
+            <Setter.Value>
+                <DrawingBrush ViewportUnits="Absolute" Viewport="0,0,30,30" ViewboxUnits="Absolute" Viewbox="-1,-1,2,2" TileMode="Tile">
+                    <DrawingBrush.Drawing>
+                        <GeometryDrawing Geometry="M0,0L1,0 1,1 0,1z">
+                            <GeometryDrawing.Brush>
+                                <RadialGradientBrush>
+                                    <GradientStop Color="White" Offset="0.5" />
+                                    <GradientStop Color="Transparent" Offset="1" />
+                                </RadialGradientBrush>
+                            </GeometryDrawing.Brush>
+                        </GeometryDrawing>
+                    </DrawingBrush.Drawing>
+                </DrawingBrush>
+            </Setter.Value>
+        </Setter>
+    </Style>
+    <Style x:Key="st.DoubleRotateWipe.To" TargetType="{x:Type local:TransitionerSlide}">
+        <Setter Property="UIElement.OpacityMask">
+            <Setter.Value>
+                <DrawingBrush>
+                    <DrawingBrush.Drawing>
+                        <DrawingGroup>
+                            <GeometryDrawing Geometry="M0,0L1,0 1,1 0,1z">
+                                <GeometryDrawing.Brush>
+                                    <LinearGradientBrush EndPoint="1,0">
+                                        <LinearGradientBrush.Transform>
+                                            <RotateTransform Angle="5" />
+                                        </LinearGradientBrush.Transform>
+                                        <GradientStop Offset="0" Color="White" />
+                                        <GradientStop Offset="0.1" />
+                                    </LinearGradientBrush>
+                                </GeometryDrawing.Brush>
+                            </GeometryDrawing>
+                            <GeometryDrawing Geometry="M0,0L1,0 1,1 0,1z">
+                                <GeometryDrawing.Brush>
+                                    <LinearGradientBrush StartPoint="1,1" EndPoint="0,1">
+                                        <LinearGradientBrush.Transform>
+                                            <RotateTransform Angle="5" CenterX="1" CenterY="1" />
+                                        </LinearGradientBrush.Transform>
+                                        <GradientStop Offset="0" Color="White" />
+                                        <GradientStop Offset="0.1" />
+                                    </LinearGradientBrush>
+                                </GeometryDrawing.Brush>
+                            </GeometryDrawing>
+                        </DrawingGroup>
+                    </DrawingBrush.Drawing>
+                </DrawingBrush>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <Style x:Key="st.FadeAndBlur.To" TargetType="{x:Type local:TransitionerSlide}">
+        <Setter Property="UIElement.RenderTransformOrigin" Value="0.5, 0.5" />
+        <Setter Property="UIElement.RenderTransform">
+            <Setter.Value>
+                <ScaleTransform ScaleX="1" ScaleY="1" />
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <Style x:Key="st.FadeAndGrow.To" TargetType="{x:Type local:TransitionerSlide}">
+        <Setter Property="UIElement.RenderTransformOrigin" Value="0.5, 0.5" />
+        <Setter Property="UIElement.RenderTransform">
+            <Setter.Value>
+                <ScaleTransform ScaleX="1" ScaleY="1" />
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+
+    <Style x:Key="st.HorizontalBlinds.To" TargetType="{x:Type local:TransitionerSlide}">
+        <Setter Property="UIElement.OpacityMask">
+            <Setter.Value>
+                <LinearGradientBrush MappingMode="Absolute" SpreadMethod="Repeat" StartPoint="0,0" EndPoint="0,30">
+                    <GradientStop Color="White" />
+                    <GradientStop />
+                </LinearGradientBrush>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <Style x:Key="st.HorizontalWipe.To" TargetType="{x:Type local:TransitionerSlide}">
+        <Setter Property="UIElement.OpacityMask">
+            <Setter.Value>
+                <LinearGradientBrush StartPoint="0,0" EndPoint="1,0">
+                    <GradientStop Color="#FF000000" Offset="0" />
+                    <GradientStop Color="#00000000" Offset="0" />
+                </LinearGradientBrush>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <Style x:Key="st.Melt.To" TargetType="{x:Type local:TransitionerSlide}">
+        <Setter Property="UIElement.OpacityMask">
+            <Setter.Value>
+                <LinearGradientBrush EndPoint="1,0">
+                    <GradientStop Offset="0" />
+                    <GradientStop Offset="0.1" />
+                    <GradientStop Offset="0.2" />
+                    <GradientStop Offset="0.3" />
+                    <GradientStop Offset="0.4" />
+                    <GradientStop Offset="0.5" />
+                    <GradientStop Offset="0.6" />
+                    <GradientStop Offset="0.7" />
+                    <GradientStop Offset="0.8" />
+                    <GradientStop Offset="0.9" />
+                    <GradientStop Offset="1" />
+                </LinearGradientBrush>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <Style x:Key="st.RotateWipe.To" TargetType="{x:Type local:TransitionerSlide}">
+        <Setter Property="UIElement.OpacityMask">
+            <Setter.Value>
+                <LinearGradientBrush EndPoint="1,0">
+                    <LinearGradientBrush.Transform>
+                        <RotateTransform Angle="10" />
+                    </LinearGradientBrush.Transform>
+                    <GradientStop Offset="0" Color="White" />
+                    <GradientStop Offset="0.1" />
+                </LinearGradientBrush>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <Style x:Key="st.Star.To" TargetType="{x:Type local:TransitionerSlide}">
+        <Setter Property="UIElement.OpacityMask">
+            <Setter.Value>
+                <ImageBrush ImageSource="/Lb.Transitions;component/Images/star.png" Stretch="Uniform">
+                    <ImageBrush.RelativeTransform>
+                        <TransformGroup>
+                            <ScaleTransform CenterX="0.5" CenterY="0.5" ScaleX="0" ScaleY="0" />
+                            <RotateTransform CenterX="0.5" CenterY="0.5" />
+                        </TransformGroup>
+                    </ImageBrush.RelativeTransform>
+                </ImageBrush>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <Style x:Key="st.VerticalBlinds.To" TargetType="{x:Type local:TransitionerSlide}">
+        <Setter Property="UIElement.OpacityMask">
+            <Setter.Value>
+                <LinearGradientBrush MappingMode="Absolute" SpreadMethod="Repeat" StartPoint="0,0" EndPoint="30,0">
+                    <GradientStop Color="White" />
+                    <GradientStop />
+                </LinearGradientBrush>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <Style x:Key="st.VerticalWipe.To" TargetType="{x:Type local:TransitionerSlide}">
+        <Setter Property="UIElement.OpacityMask">
+            <Setter.Value>
+                <LinearGradientBrush StartPoint="0,0" EndPoint="0,1">
+                    <GradientStop Color="#FF000000" Offset="0" />
+                    <GradientStop Color="#00000000" Offset="0" />
+                </LinearGradientBrush>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <Style x:Key="st.FadeAndBlur.From" TargetType="{x:Type local:TransitionerSlide}">
+        <Setter Property="UIElement.BitmapEffect">
+            <Setter.Value>
+                <BlurBitmapEffect Radius="0" />
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <Style x:Key="st.FadeAndGrow.From" TargetType="{x:Type local:TransitionerSlide}">
+        <Setter Property="UIElement.RenderTransformOrigin" Value="0.5, 0.5" />
+        <Setter Property="UIElement.RenderTransform">
+            <Setter.Value>
+                <ScaleTransform ScaleX="1" ScaleY="1" />
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <Style x:Key="st.Roll.From" TargetType="{x:Type local:TransitionerSlide}">
+        <Setter Property="UIElement.RenderTransformOrigin" Value="0,1" />
+        <Setter Property="UIElement.RenderTransform">
+            <Setter.Value>
+                <RotateTransform />
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+
+    <wipe:CustomWipe x:Key="Checkerboard" ToStyle="{StaticResource st.Checkerboard.To}" ToStoryboard="{StaticResource Checkerboard.To}"/>
+    <wipe:CustomWipe x:Key="DiagonalWipe" ToStyle="{StaticResource st.DiagonalWipe.To}" ToStoryboard="{StaticResource DiagonalWipe.To}"/>
+    <wipe:CustomWipe x:Key="Diamonds" ToStyle="{StaticResource st.Diamonds.To}" ToStoryboard="{StaticResource Diamonds.To}"/>
+    <wipe:CustomWipe x:Key="Dots" ToStyle="{StaticResource st.Dots.To}" ToStoryboard="{StaticResource Dots.To}"/>
+    <wipe:CustomWipe x:Key="DoubleRotateWipe" ToStyle="{StaticResource st.DoubleRotateWipe.To}" ToStoryboard="{StaticResource DoubleRotateWipeT.To}"/>
+    <wipe:CustomWipe x:Key="FadeAndBlur" ToStyle="{StaticResource st.FadeAndBlur.To}" FromStyle="{StaticResource st.FadeAndBlur.From}" ToStoryboard="{StaticResource FadeAndBlur.To}" FromStoryboard="{StaticResource FadeAndBlur.From}"/>
+    <wipe:CustomWipe x:Key="FadeAndGrow" ToStyle="{StaticResource st.FadeAndGrow.To}" FromStyle="{StaticResource st.FadeAndGrow.From}" ToStoryboard="{StaticResource FadeAndGrow.To}" FromStoryboard="{StaticResource FadeAndGrow.From}"/>
+    <wipe:CustomWipe x:Key="HorizontalBlinds" ToStyle="{StaticResource st.HorizontalBlinds.To}" ToStoryboard="{StaticResource HorizontalBlinds.To}"/>
+    <wipe:CustomWipe x:Key="HorizontalWipe" ToStyle="{StaticResource st.HorizontalWipe.To}" ToStoryboard="{StaticResource HorizontalWipe.To}"/>
+    <wipe:CustomWipe x:Key="Melt" ToStyle="{StaticResource st.Melt.To}" ToStoryboard="{StaticResource Melt.To}"/>
+    <wipe:CustomWipe x:Key="RotateWipe" ToStyle="{StaticResource st.RotateWipe.To}" ToStoryboard="{StaticResource RotateWipe.To}"/>
+    <wipe:CustomWipe x:Key="Star" ToStyle="{StaticResource st.Star.To}" ToStoryboard="{StaticResource Star.To}"/>
+    <wipe:CustomWipe x:Key="VerticalBlinds" ToStyle="{StaticResource st.VerticalBlinds.To}" ToStoryboard="{StaticResource VerticalBlinds.To}"/>
+    <wipe:CustomWipe x:Key="VerticalWipe" ToStyle="{StaticResource st.VerticalWipe.To}" ToStoryboard="{StaticResource VerticalWipe.To}"/>
+    <wipe:RollWipe x:Key="Roll" FromStyle="{StaticResource st.Roll.From}" FromStoryboard="{StaticResource Roll.From}"/>
+</ResourceDictionary>
